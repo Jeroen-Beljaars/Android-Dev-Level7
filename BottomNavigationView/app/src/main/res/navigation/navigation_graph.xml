@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.bottomnavigationview.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment2_to_rateFragment2"
+            app:destination="@id/rateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rateFragment"
+        android:name="com.example.bottomnavigationview.RateFragment"
+        android:label="Rate"
+        tools:layout="@layout/fragment_rate" >
+        <action
+            android:id="@+id/action_rateFragment_to_ratedFragment"
+            app:destination="@id/ratedFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/ratedFragment"
+        android:name="com.example.bottomnavigationview.RatedFragment"
+        android:label="Rated"
+        tools:layout="@layout/fragment_rated" >
+        <argument
+            android:name="rating"
+            app:argType="float"
+            android:defaultValue="0.0" />
+    </fragment>
+</navigation>
